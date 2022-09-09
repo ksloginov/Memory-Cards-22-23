@@ -15,11 +15,17 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            LazyVGrid(columns: [GridItem(.adaptive(minimum: 75, maximum: 100))]) {
-                ForEach(emojies[0..<emojiCount], id: \.self ) { emoji in
-                    CardView(content: emoji)
+            ScrollView {
+                LazyVGrid(columns: [GridItem(.adaptive(minimum: 75, maximum: 100))]) {
+                    ForEach(emojies[0..<emojiCount], id: \.self ) { emoji in
+                        CardView(content: emoji)
+                            .aspectRatio(2/3, contentMode: .fit)
+                    }
                 }
             }
+            .padding()
+            
+            Spacer()
             
             HStack {
                 removeButton
