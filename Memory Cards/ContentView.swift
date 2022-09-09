@@ -8,14 +8,15 @@
 import SwiftUI
 
 struct ContentView: View {
+    // var emojies = ["❤️", "👨🏻‍🍳", "💩", "😡"]
+    // var emojies = ["❤️", "👨🏻‍🍳", "💩", "😡", "😧", "🤖", "🎩", "🐯", "🦺", "💍", "🎒", "🐎", "🐩", "🦧", "🐳", "🐕", "🦄", "🦀", "🐿", "🦔", "🦦", "🦢", "🦜"]
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
-    }
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
+        HStack {
+            CardView(content: "🥲")
+            CardView(content: "🎯")
+            CardView(content: "⛳️")
+            CardView(content: "🐼")
+        }
     }
 }
