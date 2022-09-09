@@ -11,15 +11,16 @@ struct ContentView: View {
     //let emojies = ["❤️", "👨🏻‍🍳", "💩", "😡"]
     var emojies = ["❤️", "👨🏻‍🍳", "💩", "😡", "😧", "🤖", "🎩", "🐯", "🦺", "💍", "🎒", "🐎", "🐩", "🦧", "🐳", "🐕", "🦄", "🦀", "🐿", "🦔", "🦦", "🦢", "🦜"]
     
-    @State var emojiCount: Int = 5
+    @State var emojiCount: Int = 23
     
     var body: some View {
         VStack {
-            HStack {
+            LazyVGrid(columns: [GridItem(.adaptive(minimum: 75, maximum: 100))]) {
                 ForEach(emojies[0..<emojiCount], id: \.self ) { emoji in
                     CardView(content: emoji)
                 }
             }
+            
             HStack {
                 removeButton
                 Spacer()
