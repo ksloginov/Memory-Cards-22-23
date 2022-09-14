@@ -12,7 +12,17 @@ struct MemoryGameModel<CardContent> {
     
     func choose(card: Card) {
         
+        // Find Index of Card in Cards
+        
+        // Update card with the given index
+        
+        
+        //var foundCard = cards.first { cardInArray in
+        //    return cardInArray.id == card.id
+        //}
+        //foundCard?.isFaceUp.toggle()
     }
+    
     
     
     init(numberOfPairsOfCards: Int, createCardContent: (Int) -> CardContent) {

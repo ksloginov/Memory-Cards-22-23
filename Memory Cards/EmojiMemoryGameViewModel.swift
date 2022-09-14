@@ -22,4 +22,8 @@ class EmojiMemoryGameViewModel: ObservableObject {
     var cards: Array<MemoryGameModel<String>.Card>{
         return model.cards
     }
+    
+    func chooseCard(card: MemoryGameModel<String>.Card) {
+        model.choose(card: card)
+    }
 }

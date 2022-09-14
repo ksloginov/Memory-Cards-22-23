@@ -27,11 +27,6 @@ struct CardView: View {
             }
         }
         .foregroundColor(.red)
-        .onTapGesture {
-            // TODO: Add tap gesture
-            //isFaceUp.toggle()
-        }
-        
     }
 }
 
