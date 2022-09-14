@@ -7,10 +7,17 @@
 
 import Foundation
 
-class EmojiMemoryGameViewModel {
-    private var model: MemoryGameModel<String> = MemoryGameModel<String>(numberOfPairsOfCards: 2, createCardContent: { tingen in
-        return "♠️"
-    })
+class EmojiMemoryGameViewModel: ObservableObject {
+    
+    private static let emojies = ["❤️", "👨🏻‍🍳", "💩", "😡", "😧", "🤖", "🎩", "🐯", "🦺", "💍", "🎒", "🐎", "🐩", "🦧", "🐳", "🐕", "🦄", "🦀", "🐿", "🦔", "🦦", "🦢", "🦜"]
+    
+    private static func createModel() -> MemoryGameModel<String> {
+        return MemoryGameModel<String>(numberOfPairsOfCards: 5) { index in
+            return emojies[index]
+        }
+    }
+    
+    private var model: MemoryGameModel<String> = createModel()
     
     var cards: Array<MemoryGameModel<String>.Card>{
         return model.cards
