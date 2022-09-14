@@ -17,7 +17,7 @@ class EmojiMemoryGameViewModel: ObservableObject {
         }
     }
     
-    private var model: MemoryGameModel<String> = createModel()
+    @Published private var model: MemoryGameModel<String> = createModel()
     
     var cards: Array<MemoryGameModel<String>.Card>{
         return model.cards

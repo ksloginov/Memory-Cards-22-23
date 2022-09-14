@@ -10,8 +10,7 @@ import SwiftUI
 struct ContentView: View {
     
     @ObservedObject var viewModel = EmojiMemoryGameViewModel()
-    @State var emojiCount: Int = 23
-    
+
     var body: some View {
         VStack {
             ScrollView {

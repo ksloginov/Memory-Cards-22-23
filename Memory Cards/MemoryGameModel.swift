@@ -10,20 +10,13 @@ import Foundation
 struct MemoryGameModel<CardContent> {
     private (set) var cards: [Card]
     
-    func choose(card: Card) {
-        
-        // Find Index of Card in Cards
-        
-        // Update card with the given index
-        
-        
-        //var foundCard = cards.first { cardInArray in
-        //    return cardInArray.id == card.id
-        //}
-        //foundCard?.isFaceUp.toggle()
+    mutating func choose(card: Card) {
+        // 1. Find Index of Card in Cards
+        if let index = cards.firstIndex(where: { $0.id == card.id }) {
+            // 2. Update card with the given index
+            cards[index].isFaceUp.toggle()
+        }
     }
-    
-    
     
     init(numberOfPairsOfCards: Int, createCardContent: (Int) -> CardContent) {
         cards = Array<Card>()
