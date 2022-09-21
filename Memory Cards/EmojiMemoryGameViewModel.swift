@@ -11,19 +11,21 @@ class EmojiMemoryGameViewModel: ObservableObject {
     
     private static let emojies = ["❤️", "👨🏻‍🍳", "💩", "😡", "😧", "🤖", "🎩", "🐯", "🦺", "💍", "🎒", "🐎", "🐩", "🦧", "🐳", "🐕", "🦄", "🦀", "🐿", "🦔", "🦦", "🦢", "🦜"]
     
-    private static func createModel() -> MemoryGameModel<String> {
-        return MemoryGameModel<String>(numberOfPairsOfCards: 5) { index in
-            return emojies[index]
+    private static func createMemoryGame() -> MemoryGameModel<String> {
+        return MemoryGameModel<String>(numberOfPairsOfCards: 4) { pairIndex in
+            return emojies[pairIndex]
         }
     }
     
-    @Published private var model: MemoryGameModel<String> = createModel()
+    @Published private var model: MemoryGameModel<String> = createMemoryGame()
     
-    var cards: Array<MemoryGameModel<String>.Card>{
+    var cards: Array<MemoryGameModel<String>.Card> {
         return model.cards
     }
     
-    func chooseCard(card: MemoryGameModel<String>.Card) {
+    // MARK: - Intent(s)
+    
+    func choose(_ card: MemoryGameModel<String>.Card) {
         model.choose(card: card)
     }
 }
