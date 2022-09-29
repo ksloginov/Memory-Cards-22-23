@@ -2,7 +2,7 @@
 //  CardView.swift
 //  Memorize
 //
-//  Created by Konstantin Loginov on 24.07.2021.
+//  Created by Konstantin Loginov on 24.07.2022.
 //
 
 import SwiftUI
@@ -37,6 +37,6 @@ struct CardView: View {
 
 struct CardView_Previews: PreviewProvider {
     static var previews: some View {
-        CardView(card: MemoryGameModel<String>.Card(isFaceUp: true, isMatched: false, content: "🚀", id: 42))
+        CardView(card: MemoryGameModel<String>.Card(isFaceUp: true, isMatched: false, content: "🎸", id: 42))
     }
 }

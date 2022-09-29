@@ -2,10 +2,12 @@
 //  MemoryGameModel.swift
 //  Memorize
 //
-//  Created by Konstantin Loginov on 24.07.2021.
+//  Created by Konstantin Loginov on 24.07.2022.
 //
 
 import Foundation
+
+
 
 struct MemoryGameModel<CardContent> where CardContent: Equatable {
     private (set) var cards: Array<Card>
@@ -24,7 +26,7 @@ struct MemoryGameModel<CardContent> where CardContent: Equatable {
                     cards[chosenIndex].isMatched = true
                     cards[potentialMatchIndex].isMatched = true
                 }
-                
+
                 cards[chosenIndex].isFaceUp = true
             } else {
                 indexOfTheOneAndOnlyFaceUpCard = chosenIndex

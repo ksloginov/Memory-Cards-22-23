@@ -44,6 +44,10 @@ struct EmojiMemoryGameView: View {
 
 
 
+
+
+
+
 struct EmojiMemoryGameView_Previews: PreviewProvider {
     static var previews: some View {
         let viewModel = EmojiMemoryGameViewModel()
@@ -53,21 +57,6 @@ struct EmojiMemoryGameView_Previews: PreviewProvider {
             .preferredColorScheme(.light)
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
