@@ -14,15 +14,15 @@ struct CardView: View {
     var body: some View {
         GeometryReader { proxy in
             ZStack {
-                let shape = RoundedRectangle(cornerRadius: 20)
+                let shape = RoundedRectangle(cornerRadius: CardConstants.cornerRadius)
                 if card.isFaceUp {
                     shape
                         .fill()
                         .foregroundColor(.white)
                     shape
-                        .stroke(lineWidth: 3.0)
+                        .stroke(lineWidth: CardConstants.lineWidth)
                     Text(card.content)
-                        .font(Font.system(size: min(proxy.size.width, proxy.size.height) * 0.8))
+                        .font(Font.system(size: min(proxy.size.width, proxy.size.height) * CardConstants.scaleFactor))
                 } else if card.isMatched {
                     shape.opacity(0)
                 } else {
@@ -31,6 +31,12 @@ struct CardView: View {
                 }
             }
         }
+    }
+    
+    private struct CardConstants {
+        static let cornerRadius: CGFloat = 20
+        static let lineWidth = 3.0
+        static let scaleFactor = 0.8
     }
 }
 
