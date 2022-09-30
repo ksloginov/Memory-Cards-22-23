@@ -14,7 +14,7 @@ struct EmojiMemoryGameView: View {
     var body: some View {
         VStack {
             ScrollView {
-                LazyVGrid(columns: [GridItem(.adaptive(minimum: 75))]) {
+                LazyVGrid(columns: [GridItem(.adaptive(minimum: 120))]) {
                     ForEach(viewModel.cards) { emoji in
                         CardView(card: emoji)
                             .aspectRatio(2/3, contentMode: .fit)
