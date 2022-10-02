@@ -13,17 +13,13 @@ struct EmojiMemoryGameView: View {
     
     var body: some View {
         VStack {
-            ScrollView {
-                LazyVGrid(columns: [GridItem(.adaptive(minimum: 120))]) {
-                    ForEach(viewModel.cards) { emoji in
-                        CardView(card: emoji)
-                            .aspectRatio(2/3, contentMode: .fit)
-                            .onTapGesture {
-                                viewModel.choose(emoji)
-                            }
+            AspectVGrid(columns: viewModel.cards, aspectRatio: 2/3, content: { card in
+                CardView(card: card)
+                    .onTapGesture {
+                        viewModel.choose(card)
                     }
-                }
-            }
+                    .padding(4)
+            })
             .foregroundColor(.red)
         }
         .padding(.horizontal)
@@ -33,28 +29,13 @@ struct EmojiMemoryGameView: View {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 struct EmojiMemoryGameView_Previews: PreviewProvider {
     static var previews: some View {
         let viewModel = EmojiMemoryGameViewModel()
         EmojiMemoryGameView(viewModel: viewModel)
             .preferredColorScheme(.dark)
-        EmojiMemoryGameView(viewModel: viewModel)
-            .preferredColorScheme(.light)
+//        EmojiMemoryGameView(viewModel: viewModel)
+//            .preferredColorScheme(.light)
     }
 }
 
