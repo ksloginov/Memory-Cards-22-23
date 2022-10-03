@@ -13,6 +13,12 @@ struct AspectVGrid<item, itemView>: View where itemView: View, item: Identifiabl
     let aspectRatio: CGFloat
     let content: (item) -> (itemView)
     
+    init(columns: [item], aspectRatio: CGFloat, @ViewBuilder content: @escaping (item) -> (itemView)) {
+        self.columns = columns
+        self.aspectRatio = aspectRatio
+        self.content = content
+    }
+    
     var body: some View {
         GeometryReader { geoProxy in
                 let width: CGFloat = widthThatFits(itemCount: columns.count, in: geoProxy.size, itemAspecctRatio: aspectRatio)

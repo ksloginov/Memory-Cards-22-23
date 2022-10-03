@@ -34,9 +34,9 @@ struct CardView: View {
     }
     
     private struct CardConstants {
-        static let cornerRadius: CGFloat = 20
+        static let cornerRadius: CGFloat = 10
         static let lineWidth = 3.0
-        static let scaleFactor = 0.8
+        static let scaleFactor = 0.75
     }
 }
 
