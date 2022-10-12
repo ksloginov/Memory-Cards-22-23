@@ -10,12 +10,44 @@ import SwiftUI
 struct GamesListView: View {
     
     private let emojiGameViewModel = EmojiMemoryGameViewModel()
+    private let footballGameViewModel = FootballGameViewModel()
     
     var body: some View {
         
         List {
-            NavigationLink(destination: EmojiMemoryGameView(viewModel: emojiGameViewModel)) {
+            NavigationLink(destination:
+                            EmojiMemoryGameView(viewModel: emojiGameViewModel)) {
                 Text("Hei, Emoji-spill!")
+                    .font(.largeTitle)
+                    .padding(.vertical)
+            }
+            NavigationLink(destination:
+                            FootballMemoryGameView(viewModel: footballGameViewModel)) {
+                Text("ball")
+                    .font(.largeTitle)
+                    .padding(.vertical)
+            }
+            NavigationLink(destination:
+                            EmojiMemoryGameView(viewModel: emojiGameViewModel)) {
+                Text("Hei, Emoji-spill!")
+                    .font(.largeTitle)
+                    .padding(.vertical)
+            }
+            NavigationLink(destination:
+                            FootballMemoryGameView(viewModel: footballGameViewModel)) {
+                Text("ball")
+                    .font(.largeTitle)
+                    .padding(.vertical)
+            }
+            NavigationLink(destination:
+                            EmojiMemoryGameView(viewModel: emojiGameViewModel)) {
+                Text("Hei, Emoji-spill!")
+                    .font(.largeTitle)
+                    .padding(.vertical)
+            }
+            NavigationLink(destination:
+                            FootballMemoryGameView(viewModel: footballGameViewModel)) {
+                Text("ball")
                     .font(.largeTitle)
                     .padding(.vertical)
             }
