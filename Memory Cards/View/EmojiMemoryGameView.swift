@@ -36,7 +36,7 @@ struct EmojiMemoryGameView: View {
     @ViewBuilder
     private func cardView(for card: MemoryGameModel<String>.Card) -> some View {
         if card.isMatched && !card.isFaceUp {
-            Rectangle().opacity(0)
+            Color.clear
         } else {
             CardView(card: card)
                 .onTapGesture {

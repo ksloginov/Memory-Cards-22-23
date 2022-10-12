@@ -16,15 +16,24 @@ struct CardView: View {
             ZStack {
                 Text(card.content)
                     .rotationEffect(Angle.degrees(card.isMatched ? 360 : 0))
-                    .animation(Animation.easeOut(duration: 1.0).repeatForever())
-                    .font(Font.system(size: min(proxy.size.width, proxy.size.height) * CardConstants.scaleFactor))
+                    .animation(Animation.easeOut(duration: CardConstants.animationDuration).repeatForever())
+                    .font(.system(size: CardConstants.fontSize))
+                    .scaleEffect(scale(size: proxy.size))
+                    
             }
             .cardify(isFaceUp: card.isFaceUp)
         }
     }
     
+    
+    func scale(size: CGSize) -> CGFloat {
+        return min(size.width, size.height) / (CardConstants.fontSize / CardConstants.fontScale)
+    }
+    
     private struct CardConstants {
-        static let scaleFactor = 0.75
+        static let fontScale = 0.75
+        static let fontSize: CGFloat = 32.0
+        static let animationDuration = 2.0
     }
 }
 
