@@ -28,9 +28,8 @@ struct EmojiMemoryGameView: View {
                             {
             Text("Restart")
                 .foregroundColor(.red)
-        }
-       
-        )
+        })
+        .navigationTitle("Emojispillet")
     }
     
     @ViewBuilder

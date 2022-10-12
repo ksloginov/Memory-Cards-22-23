@@ -16,7 +16,7 @@ struct MemorizeApp: App {
         WindowGroup {
             
             NavigationView {
-                EmojiMemoryGameView(viewModel: emojiGameViewModel)
+                GamesListView()
                     .navigationTitle(Text(Bundle.main.infoDictionary?["CFBundleDisplayName"] as? String ?? ""))
             }
             .navigationViewStyle(StackNavigationViewStyle())
