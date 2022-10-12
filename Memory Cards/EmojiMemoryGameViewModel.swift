@@ -28,4 +28,8 @@ class EmojiMemoryGameViewModel: ObservableObject {
     func choose(_ card: MemoryGameModel<String>.Card) {
         model.choose(card: card)
     }
+    
+    func restart() {
+        model.restart()
+    }
 }

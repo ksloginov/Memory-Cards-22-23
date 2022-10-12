@@ -16,9 +16,21 @@ struct EmojiMemoryGameView: View {
             AspectVGrid(columns: viewModel.cards, aspectRatio: 2/3, content: { card in
                cardView(for: card)
             })
+            .padding(.top, 50)
             .foregroundColor(.red)
         }
         .padding(.horizontal)
+        .navigationBarItems(trailing: Button(action: {
+            withAnimation{
+                viewModel.restart()
+            }
+        })
+                            {
+            Text("Restart")
+                .foregroundColor(.red)
+        }
+       
+        )
     }
     
     @ViewBuilder

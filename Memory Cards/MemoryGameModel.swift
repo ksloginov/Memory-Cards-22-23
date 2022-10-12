@@ -17,6 +17,14 @@ struct MemoryGameModel<CardContent> where CardContent: Equatable {
         set { cards.indices.forEach { cards[$0].isFaceUp = ($0 == newValue) } }
     }
     
+    mutating func restart() {
+        for index in cards.indices {
+            cards[index].isMatched = false
+            cards[index].isFaceUp = false
+        }
+        cards.shuffle()
+    }
+    
     mutating func choose(card: Card) {
         if let chosenIndex = cards.firstIndex(where: {$0.id == card.id}),
            !cards[chosenIndex].isFaceUp,
@@ -43,6 +51,7 @@ struct MemoryGameModel<CardContent> where CardContent: Equatable {
             cards.append(Card(content: content, id: pairIndex * 2))
             cards.append(Card(content: content, id: pairIndex * 2 + 1))
         }
+        cards.shuffle()
     }
     
     struct Card: Identifiable {
